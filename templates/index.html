@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/layui/css/custom.css">
     <style>
         .flex {
             display: flex;
@@ -74,28 +75,17 @@
     </style>
 </head>
 <body>
-<div class="layui-layout layui-layout-admin">
+
+    <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo layui-hide-xs" data-en="Vocal Separate v{{ version }}" data-cn="人声分离 v{{ version }}"></div>
-        <!-- 头部区域（可配合layui 已有的水平导航） -->
-        <ul class="layui-nav layui-layout-right">
-            <!-- 移动端显示 -->
-            <li id="checkupdate" class="layui-nav-item layui-hide "><a
-                    href="https://github.com/jianchang512/vocal-separate/releases" class="layui-font-red" target="_blank"></a>
-            </li>
-            <li class="layui-nav-item layui-hide-xs"><a href="https://github.com/jianchang512/vocal-separate"
-                                                        target="_blank">Github</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="https://github.com/jianchang512/vocal-separate/issue"
-                                                        target="_blank" data-en="Post Isue" data-cn="遇到问题?"></a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="https://discord.gg/TMCM2PfHzQ" target="_blank">Discord</a></li>
-            <li class="layui-nav-item layui-hide-xs" ><a class="layui-font-green" data-en="Donate the project" data-cn="捐助该项目" href="https://github.com/jianchang512/pyvideotrans/blob/main/about.md" target="_blank"></a></li>
-        </ul>
+        <div class="layui-logo layui-hide-xs" data-en="Vocal Separate" data-cn="人声分离"></div>
+
     </div>
     <div id="content">
         <!-- 内容主体区域 -->
         <div class="layui-upload-drag" id="upload">
             <i class="layui-icon layui-icon-upload"></i>
-            <div data-cn="点击上传，或将音频视频文件拖拽到此处(wav,mp3,flac,mp4,mov,mkv,avi,mpeg)"
+            <div data-cn="点击或者拖拽上传文件(wav,mp3,flac,mp4,mov,mkv,avi,mpeg)"
                  data-en="click to upload or drag video or audio to here(wav,mp3,flac,mp4,mov,mkv,avi,mpeg)"></div>
             <div class="layui-hide my-1" id="preview"></div>
         </div>
@@ -114,11 +104,11 @@
             <div class="layui-form-item layui-inline">
                 <input type="hidden" id="wav_name" name="wav_name">
                 <button type="submit" class="layui-btn layui-btn-danger" lay-submit lay-filter="submit" data-cn="立即分离" data-en="Start Separate"></button>
-                {% if cuda %}
+                <!--{% if cuda %}
                     <span class="worktype">on CUDA</span>
                 {% else %}
                     <span class="worktype">on CPU </span>
-                {% endif %}
+                {% endif %} -->
             </div>
             <div class="layui-label-text layui-font-12 my-1 layui-font-gray" data-cn="比较适合钢琴、鼓、贝斯为主的音乐分离，中文音乐建议使用2stems"></div>
         </form>

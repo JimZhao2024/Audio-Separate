@@ -45,7 +45,8 @@ def static_files(filename):
 
 @app.route('/')
 def index():
-    return render_template("index.html",version=vocal.version_str,cuda=cfg.cuda, language=cfg.LANG,root_dir=ROOT_DIR.replace('\\', '/'))
+    cfg.LANG = 'en'
+    return render_template("index.html",version=vocal.version_str, language=cfg.LANG,root_dir=ROOT_DIR.replace('\\', '/'))
 
 
 # 上传音频

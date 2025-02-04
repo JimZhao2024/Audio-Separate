@@ -3,7 +3,7 @@ import os
 import sys
 import tensorflow
 web_address = '127.0.0.1:9999'
-LANG = "en" if locale.getdefaultlocale()[0].split('_')[0].lower() != 'zh' else "zh"
+LANG = "en" 
 
 
 ROOT_DIR = os.getcwd()
